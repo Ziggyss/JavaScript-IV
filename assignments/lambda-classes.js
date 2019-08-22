@@ -33,7 +33,15 @@ class Instructor extends Person {
         this.favSubjects = favSubjects;
     }
     listsSubjects(){
-        console.log(['this.favSubjects']);
+        console.log(JSON.stringify(this.favSubjects));
+    }
+    PRAssignment(subject){
+        console.log('${this.name} has submitted a PR for ' + subject + '.');
+    }
+    sprintChallenge(subject){
+        console.log('${this.name} has begun sprint challenge on ' + subject + '.');
     }
 };
- 
+
+let LisaW = new Student('Lisa', 43, 'Belfast', 'teacher', 'WEBEU3', ['JS', 'Spanish', 'Game Design']);
+
