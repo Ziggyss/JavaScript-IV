@@ -203,44 +203,46 @@ const Bob = new Person('Bob', 35);
   
   const basil = new Plant('basil', 'greenhouse'); */
 
-  function Plant(name, location){
-    this.name = name;
-    this.location = location;
-    this.health = 100;
-  }
+  class Plant {
+     constructor (name, location){
+     this.name = name;
+     this.location = location;
+     this.health = 100;
+    }
   
-  Plant.prototype.hotDay = function(){
-    if (this.location === 'greenhouse'){
+     hotDay (){
+       if (this.location === 'greenhouse'){
       return 'Water and move ' + this.name + ' outside';
     }
-    return 'Water' + this.name + '.'; 
-  }
+       return 'Water' + this.name + '.'; 
+    }
   
-  Plant.prototype.coldDay = function(){
-    if(this.location === 'outside'){
+     coldDay (){
+      if(this.location === 'outside'){
       return 'Move' + this.name + 'into greenhouse.';
     }
-    return 'Leave ' + this.name + ' alone.';
-  }
+      return 'Leave ' + this.name + ' alone.';
+    }
   
-  Plant.prototype.forgot = function(){
-    this.health -= 20;
-    return this.health;
-  }
+     forgot (){
+      this.health -= 20;
+      return this.health;
+    }
   
-  Plant.prototype.healthStatus = function(){
-    if (this.health <20){
+     healthStatus (){
+      if (this.health <20){
       return 'RIP ' + this.name;
     }
-    return this.health;
+      return this.health;
+}
   
-  };
+};
   
   const basil = new Plant('basil', 'greenhouse');
   
   //Example 3
   
-  function Seedling (name, location, weeksOld){
+  /* function Seedling (name, location, weeksOld){
     Plant.call(this, name, location);
     this.age = weeksOld;
   }
@@ -253,4 +255,24 @@ const Bob = new Person('Bob', 35);
     return 'Leave ' + this.name + 'for now.';
   };
   
-  const babyBasil = new Seedling (babyBasil, greenhouse, 2);
+  const babyBasil = new Seedling (babyBasil, greenhouse, 2); */
+
+  class Seedling extends Plant {
+          constructor (name, location, weeksOld){
+          super(name, location);
+          this.age = weeksOld;
+          }
+
+          newPotCheck(){
+          if(age % 4 === 0){
+          return 'Move ' + this.name + ' to a bigger pot.';
+          }
+          
+          //return 'Leave ' + this.name + 'for now.';
+        
+    };
+
+
+  
+  let babyParsley = new Seedling (babyParsley, greenhouse, 2);
+
