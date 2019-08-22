@@ -98,7 +98,7 @@ const Bob = new PersonA('Bob', 35);
   
   const BobbieJr = new Baby('Bobbie Junior', 1); */
 
-  class Baby extends Person {
+  class Baby extends PersonA {
       play (toy) {
           return this.name + ' is playing with ' + toy + '.';
     }
@@ -203,26 +203,26 @@ const Bob = new PersonA('Bob', 35);
   
   const basil = new Plant('basil', 'greenhouse'); */
 
-  class Plant {
+     class Plant2 {
      constructor (name, location){
      this.name = name;
      this.location = location;
      this.health = 100;
-    }
-  
+     }
+   
      hotDay (){
        if (this.location === 'greenhouse'){
-      return 'Water and move ' + this.name + ' outside';
-    }
+       return 'Water and move ' + this.name + ' outside.';
+      }
        return 'Water' + this.name + '.'; 
-    }
+      }
   
      coldDay (){
       if(this.location === 'outside'){
       return 'Move' + this.name + 'into greenhouse.';
-    }
+      }
       return 'Leave ' + this.name + ' alone.';
-    }
+      } 
   
      forgot (){
       this.health -= 20;
@@ -234,11 +234,12 @@ const Bob = new PersonA('Bob', 35);
       return 'RIP ' + this.name;
     }
       return this.health;
-}
-  
+ }
 };
   
-  const basil = new Plant('basil', 'greenhouse');
+
+  
+  let coriander = new Plant2('coriander', 'greenhouse');
   
   //Example 3
   
@@ -257,7 +258,7 @@ const Bob = new PersonA('Bob', 35);
   
   const babyBasil = new Seedling (babyBasil, greenhouse, 2); */
 
-  class Seedling extends Plant {
+  class Seedling2 extends Plant2 {
           constructor (name, location, weeksOld){
           super(name, location);
           this.age = weeksOld;
@@ -275,5 +276,5 @@ const Bob = new PersonA('Bob', 35);
 
 
   
-  let babyParsley = new Seedling ('babyParsley', 'greenhouse', 2);
-
+  let babyCoriander = new Seedling2 ('babyCoriander', 'greenhouse', 2);
+ 
