@@ -135,9 +135,74 @@ const Bob = new Person('Bob', 35);
   };
   
   const student1 = new Student('Lisa', 'WEBEU3'); */
+
+  class Student {
+      constructor (name, course){
+      this.name = name;
+      this.course = course;
+      this.testsTaken = 0;
+      this.totalScore = 0;
+      this.averageScore = 0;
+      }
+  
+     details () {
+     return this.name + ' ' + this.course + ' ' + this.averageScore;
+      }
+     takeTest (score) {
+     this.testsTaken ++;
+     this.totalScore += score;
+     this.averageScore = this.totalScore / this.testsTaken;
+      }
+  
+     passing () {
+       if (this.averageScore >= 70){
+       return true;
+        }
+       else {
+       return false;
+       }
+    }
+};
+  
+  let student1 = new Student('Lisa', 'WEBEU3');
   
   //Example 2
   
+  /* function Plant(name, location){
+    this.name = name;
+    this.location = location;
+    this.health = 100;
+  }
+  
+  Plant.prototype.hotDay = function(){
+    if (this.location === 'greenhouse'){
+      return 'Water and move ' + this.name + ' outside';
+    }
+    return 'Water' + this.name + '.'; 
+  }
+  
+  Plant.prototype.coldDay = function(){
+    if(this.location === 'outside'){
+      return 'Move' + this.name + 'into greenhouse.';
+    }
+    return 'Leave ' + this.name + ' alone.';
+  }
+  
+  Plant.prototype.forgot = function(){
+    this.health -= 20;
+    return this.health;
+  }
+  
+  Plant.prototype.healthStatus = function(){
+    if (this.health <20){
+      return 'RIP ' + this.name;
+    }
+    return this.health;
+  
+  };
+  
+  const basil = new Plant('basil', 'greenhouse'); */
+
   function Plant(name, location){
     this.name = name;
     this.location = location;
