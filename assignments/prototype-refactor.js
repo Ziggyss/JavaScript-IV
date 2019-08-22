@@ -25,7 +25,7 @@ Prototype Refactor
   const Bob = new Person('Bob', 35);
  */
 
-class Person {
+class PersonA {
   constructor(name,age) {
       this.name = name;
       this.age = age;
@@ -42,7 +42,7 @@ class Person {
   }
 };
 
-const Bob = new Person('Bob', 35);
+const Bob = new PersonA('Bob', 35);
 
 //Task 2
 /* function Car(make, model){
@@ -136,7 +136,7 @@ const Bob = new Person('Bob', 35);
   
   const student1 = new Student('Lisa', 'WEBEU3'); */
 
-  class Student {
+  class StudentA {
       constructor (name, course){
       this.name = name;
       this.course = course;
@@ -164,7 +164,7 @@ const Bob = new Person('Bob', 35);
     }
 };
   
-  let student1 = new Student('Lisa', 'WEBEU3');
+  let studentA = new StudentA('Lisa', 'WEBEU3');
   
   //Example 2
   
