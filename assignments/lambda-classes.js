@@ -47,13 +47,18 @@ let Gabe = new Instructor ('Gabe', 'unknown', 'Spain', 'Teaching Code', 'JS', 'T
     sprintChallenge(subject){
         console.log(`${this.name} has begun sprint challenge on ` + subject + `.`);
     }
+    
     graduate(){
-        if (this.grade >= 70){
+      
+            while (this.grade <70){
+                console.log(`Go back to grading your assignments, ${this.name}... You're not ready to graduate just yet. Let's regrade you...`);     
+                this.grade = Math.random() * (100 - 0) + 0; 
+            }
+            if(this.grade>=70){
+
             console.log(`${this.name} gets to graduate! Congratulations!`);
-        }
-        else {
-            console.log(`Go back to grading your assignments, ${this.name}... You're not ready to graduate just yet.`)
-        };
+
+            }      
     }
 };
 
