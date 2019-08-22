@@ -24,7 +24,7 @@ class Instructor extends Person {
         console.log(`${student.name} receives a perfect score on ${subject}.`);
     }
     randomPoints(student){
-       student.grade = Math.random() * (100 - 0) + 0;
+       student.grade = Math.random() * (100 - 1) + 0;
     }
 };
 
@@ -48,17 +48,19 @@ let Gabe = new Instructor ('Gabe', 'unknown', 'Spain', 'Teaching Code', 'JS', 'T
         console.log(`${this.name} has begun sprint challenge on ` + subject + `.`);
     }
     
-    graduate(){
+    graduate(/* myInstructor */){
       
             while (this.grade <70){
-                console.log(`Go back to grading your assignments, ${this.name}... You're not ready to graduate just yet. Let's regrade you...`);     
-                this.grade = Math.random() * (100 - 0) + 0; 
+                console.log(`Your grade is ${this.grade}. Back to grading those assignments, ${this.name}... You're not ready to graduate just yet. Let's regrade you...`);     
+                this.grade = Math.random() * (100 - 1) + 1; 
+               /*  myInstructor.randomPoints(this); */
             }
             if(this.grade>=70){
             console.log(`${this.name} gets to graduate! Congratulations!`);
             }      
     }
 };
+/* The commented out code above was a newly corrected version based on help I received from my fellow group member, Samuel. I've left it commented out, for now, as he helped me so much with it, but I believe this would be the proper way to refer back to the method in the Instructor object. Line 56 would replace line 55 and there would be a parameter in line 51. */
 
 let LisaW = new Student('Lisa', 43, 'Belfast', 'teacher', 'WEBEU3', ['JS', 'Spanish', 'Game Design'], );
 
