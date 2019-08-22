@@ -23,16 +23,20 @@ class Instructor extends Person {
     grade(student, subject){
         console.log(`${student.name} receives a perfect score on ${subject}.`);
     }
+    randomPoints(student){
+       student.grade = Math.random() * (100 - 0) + 0;
+    }
 };
 
 let Gabe = new Instructor ('Gabe', 'unknown', 'Spain', 'Teaching Code', 'JS', 'This is brutal');
 
   class Student extends Person {
-    constructor (name, age, location, previousBackground, className, favSubjects){
+    constructor (name, age, location, previousBackground, className, favSubjects, grade){
         super(name, age, location);
         this.className = className;
         this.previousBackground = previousBackground;
         this.favSubjects = favSubjects;
+        this.grade = grade;
     }
     listsSubjects(){
         console.log(JSON.stringify(this.favSubjects));
@@ -45,7 +49,7 @@ let Gabe = new Instructor ('Gabe', 'unknown', 'Spain', 'Teaching Code', 'JS', 'T
     }
 };
 
-let LisaW = new Student('Lisa', 43, 'Belfast', 'teacher', 'WEBEU3', ['JS', 'Spanish', 'Game Design']);
+let LisaW = new Student('Lisa', 43, 'Belfast', 'teacher', 'WEBEU3', ['JS', 'Spanish', 'Game Design'], 80);
 
 class projectManager extends Instructor {
     constructor (name, age, location, speciality, favLanguage, catchPhrase, gradClassName, favInstructor){
