@@ -268,11 +268,12 @@ const Bob = new Person('Bob', 35);
           return 'Move ' + this.name + ' to a bigger pot.';
           }
           
-          //return 'Leave ' + this.name + 'for now.';
+          return 'Leave ' + this.name + 'for now.';
+        }
         
     };
 
 
   
-  let babyParsley = new Seedling (babyParsley, greenhouse, 2);
+  let babyParsley = new Seedling ('babyParsley', 'greenhouse', 2);
 
