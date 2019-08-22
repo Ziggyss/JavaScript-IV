@@ -21,9 +21,11 @@ class Instructor extends Person {
         console.log(`Today we are learning about ${subject}.`);
     }
     grade(student, subject){
-        console.log(`${student} receives a perfect score on ${subject}`);
+        console.log(`${student.name} receives a perfect score on ${subject}.`);
     }
 };
+
+let Gabe = new Instructor ('Gabe', 'unknown', 'Spain', 'Teaching Code', 'JS', 'This is brutal');
 
   class Student extends Person {
     constructor (name, age, location, previousBackground, className, favSubjects){
@@ -58,3 +60,5 @@ class projectManager extends Instructor {
         console.log(`${this.name} debugs ${student.name}'s code on ${subject}.`);
     }
 };
+
+let Justinas = new projectManager ('Justinas', 'unknown', 'Lithuania', 'Web development', 'JS', 'Good job', 'WEBEU2', 'Gabe');
