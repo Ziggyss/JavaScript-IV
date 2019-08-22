@@ -55,9 +55,7 @@ let Gabe = new Instructor ('Gabe', 'unknown', 'Spain', 'Teaching Code', 'JS', 'T
                 this.grade = Math.random() * (100 - 0) + 0; 
             }
             if(this.grade>=70){
-
             console.log(`${this.name} gets to graduate! Congratulations!`);
-
             }      
     }
 };
