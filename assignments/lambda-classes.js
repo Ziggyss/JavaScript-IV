@@ -6,7 +6,7 @@ class Person {
         this.location = location;
     }
     speak(){
-        console.log('Hello my name is ${this.name}, I am from ${this.location}.');
+        console.log(`Hello my name is ${this.name}, I am from ${this.location}.`);
     }
 };
 
@@ -18,10 +18,10 @@ class Instructor extends Person {
         this.catchPhrase = catchPhrase;
     }
     demo(subject){
-        console.log('Today we are learning about ${subject}.');
+        console.log(`Today we are learning about ${subject}.`);
     }
     grade(student, subject){
-        console.log('${student.name} receives a perfect score on ${subject}');
+        console.log(`${student} receives a perfect score on ${subject}`);
     }
 };
 
@@ -36,12 +36,22 @@ class Instructor extends Person {
         console.log(JSON.stringify(this.favSubjects));
     }
     PRAssignment(subject){
-        console.log('${this.name} has submitted a PR for ' + subject + '.');
+        console.log(`${this.name} has submitted a PR for ` + subject + `.`);
     }
     sprintChallenge(subject){
-        console.log('${this.name} has begun sprint challenge on ' + subject + '.');
+        console.log(`${this.name} has begun sprint challenge on ` + subject + `.`);
     }
 };
 
 let LisaW = new Student('Lisa', 43, 'Belfast', 'teacher', 'WEBEU3', ['JS', 'Spanish', 'Game Design']);
 
+class projectManager extends Instructor {
+    constructor (name, age, location, speciality, favLanguage, catchPhrase, gradClassName, favInstructor){
+        super(name, age, location, speciality, favLanguage, catchPhrase);
+        this.gradClassName = gradClassName;
+        this.favInstructor = favInstructor;
+    }
+    standUp(channel){
+         console.log()
+    }
+};
